@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": {{ALLOW_LIST}},
+    "additionalDirectories": {{READ_DIRS}}
+  },
+  "worktree": {
+    "bgIsolation": "none"
+  }
+}
