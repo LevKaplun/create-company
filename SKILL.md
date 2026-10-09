@@ -90,8 +90,9 @@ file. Wait for a yes.
 1. Ask the owner to open `claude` in the folder once and accept the trust prompt: until then the folder's settings are
    ignored.
 2. Background sessions: `scripts/start_sessions.sh <folder> <kept roles> hub`; give the links, ask the owner to pin
-   the sessions in `claude agents`, and to check the wiring by typing in the hub "@<one role> reply with the single
-   word ok". One session: `cd <folder> && claude --agent hub -n hub` (add `--remote-control hub` for the phone).
+   each session right away in `claude agents` (select it and press Control+T; it moves under "Pinned"), and to check
+   the wiring by typing in the hub "@<one role> reply with the single word ok".
+   One session: `cd <folder> && claude --agent hub -n hub` (add `--remote-control hub` for the phone).
 3. Explain in a few lines: `/ask <role> <question>`; the hub and its mentions, "discuss" and "summarize"; a standing
    session per role; when the docs change, update the docs, never the roles; after editing a role, restart its
    session; the two-week usage log.

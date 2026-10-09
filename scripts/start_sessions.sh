@@ -63,4 +63,5 @@ for role in "${roles[@]}"; do
   link="$(claude logs "$role" 2>/dev/null | grep -o 'https://claude.ai/code/session_[A-Za-z0-9]*' | tail -1 || true)"
   echo "$role | ${link:-no Remote Control link yet: run 'claude logs $role'}"
 done
-echo "Pin the sessions you want always on in 'claude agents'; an unpinned idle session stops after about an hour."
+echo "Pin each session now in 'claude agents' (select it, Control+T): an unpinned idle session stops after about an hour."
+echo "A pin does not start a stopped session; 'claude respawn <id>' does, keeping its conversation."

@@ -10,7 +10,7 @@ Every item here happened while building the first company.
 | Messages between sessions are held or dropped | Different permission modes, and `crossSessionInbound` set only in the project (ignored there) | Launch each session with `--settings '{"crossSessionInbound":"accept"}'` (the start script does) |
 | A changed role behaves as before | A running session keeps the prompt it started with | Restart the session (`scripts/start_sessions.sh <folder> <role>`) |
 | A restart lost a conversation | Stopping and removing a fresh session wipes it | Warn the owner first; use `claude respawn <id>` when no prompt changed |
-| A role went quiet after an hour | Unpinned idle sessions stop | Pin it in `claude agents`; opening it resumes the conversation |
+| A role went quiet after an hour | Unpinned idle sessions stop | Select it in `claude agents` and press Control+T to pin it. A pin does not start a stopped session: `claude respawn <id>` does, keeping the conversation |
 | A role quotes old facts | The doc is out of date, or an old copy exists | Update the doc; name old folders as excluded in `CLAUDE.md` and `docs-index.md` |
 | A role keeps a decision that changed | A decision was copied into the role or its notebook | Move it to a dated decision record; empty the notebook of copied data |
 | Roles chatter or pad their answers | No limits on consults or length | The consult limits and focus rules in `CLAUDE.md` |

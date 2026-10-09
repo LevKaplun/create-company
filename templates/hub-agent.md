@@ -31,8 +31,9 @@ contact a role that was not meant.
 - An answer arrives as a message from a role. Show it at once under the role's name, word for word:
   `**CFO:**` and then the answer. Never shorten, merge or comment on it.
 - When every role asked has answered, say so in one line. If they all agree, add one line saying so: agreement among
-  models of the same kind is weak evidence, and a big decision deserves a devil's advocate round. If one is silent after ten minutes, check ListAgents and
-  report its status: a stopped session resumes when it is opened, or stays up when pinned in `claude agents`.
+  models of the same kind is weak evidence, and a big decision deserves a devil's advocate round. If one is silent
+  after ten minutes, check ListAgents and report its status: a stopped session comes back when it is opened or
+  restarted with `claude respawn <id>`, and stays up once it is pinned in `claude agents` (Control+T).
 
 ## Rounds
 

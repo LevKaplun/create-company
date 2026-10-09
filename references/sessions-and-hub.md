@@ -23,8 +23,12 @@
 `claude --bg --agent <role> --name <role> --remote-control <role> "<first message>"`, waits until they are idle and
 prints each Remote Control link. In the app the sessions keep their names.
 
-- **Pin them** in `claude agents`: an unpinned idle session stops after about an hour (its conversation stays, and
-  it resumes when opened), and a hub waiting on a stopped role waits.
+- **Pin them right away** in `claude agents`: select each session and press Control+T; it moves under a "Pinned"
+  header. An unpinned idle session stops after about an hour, and a hub waiting on a stopped role waits. A pin keeps
+  a running session up but does not start a stopped one: `claude respawn <id>` does, keeping its conversation
+  (opening the session or replying to it also brings it back).
+- **A shutdown or restart of the computer stops every session** (sleep does not). Afterwards
+  `claude respawn --all` brings them back with their conversations.
 - **Editing a role does not reach a running session.** A session keeps the system prompt it started with. After
   changing an agent file, `CLAUDE.md` or a playbook, restart that session.
 - **A restart of a fresh session wipes its conversation**, and the link changes. Tell the owner before restarting a
