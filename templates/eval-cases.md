@@ -7,8 +7,8 @@ cases as a held-out set: run them only once the playbook stops changing.
 ## Checks for every case
 
 - G1. Leads with the answer; nothing restated; no padding.
-- G2. Every company fact cites a doc or record and its section, or says the docs don't say.
-- G3. No claim the docs don't support.
+- G2. Every number, quote and outside claim names its source, or says the docs don't say.
+- G3. No company fact the sources don't support.
 - G4. Follows the answer format in the agent file.
 - G5. Drafts only: proposes nothing that sends, posts or publishes.
 {{STYLE_CHECKS}}
@@ -19,9 +19,9 @@ cases as a held-out set: run them only once the playbook stops changing.
 
 - Prompt: in `cases.json` as `case-01`.
 - 1.1 {{A check a top practitioner's answer would pass and a generic answer would fail.}}
-- 1.2 {{A check that the decision records were read and cited, without stating the decision here.}}
+- 1.2 {{A check that the strategy files were weighed, not recited as rules, without stating the plan here.}}
 - 1.3 {{A check on the deliverable's shape or completeness.}}
 
 <!-- Write checks as yes or no questions about the answer. A check must be passable: if two careful answers both
-fail it for the same reason, the check is wrong, not the answers. Never write a company fact or a decision into a
-check; point to the doc or record instead, so the check follows whatever it says on the day. -->
+fail it for the same reason, the check is wrong, not the answers. Never write a company fact or a plan into a check;
+point to the doc or strategy file instead, so the check follows whatever it says on the day. -->

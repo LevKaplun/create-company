@@ -7,7 +7,7 @@ Two stages: an eval that tells whether each playbook helps, then two weeks of re
 1. **Cases.** 10 to 15 real tasks per role, from questions the owner asked or will ask, with names replaced by
    placeholders. Prompts go in `evals/<role>/cases.json` (`[{"id": "case-01", "prompt": "..."}]`), yes or no checks
    in `evals/<role>/cases.md` (`templates/eval-cases.md`). Keep the last third as a held-out set. Never write a
-   company fact or a decision into a check: point to the doc or record.
+   company fact or a plan into a check: point to the doc or strategy file.
 2. **Runs.** Commit the notebooks first, then `python3 scripts/run_evals.py <company folder> <role>[,<role>] --workers 4`.
    Each case runs headless in fresh sessions: arm A with the playbook preloaded, arm B without it. One run per case
    is enough while iterating; add `--runs 3` before deciding anything. A run takes

@@ -6,7 +6,7 @@
 Each role needs `evals/<role>/cases.json`: a list of {"id": "case-01", "prompt": "..."}.
 
 Arm A runs the role with its playbook preloaded; arm B runs a temporary copy of the agent with no playbook section,
-no `skills:` line and the Skill tool disallowed. Both get the same docs, records, notebook and model. Outputs go to
+no `skills:` line and the Skill tool disallowed. Both get the same sources, notebook and model. Outputs go to
 `evals/<role>/results-<date>/<case>-A.md` and `-B.md` (with `-r2`, `-r3` before the arm when --runs is above 1).
 One run per case is enough to iterate; use three before deciding anything. Afterwards the temporary agents are removed and the notebooks
 are reset with git, because the agent memory field writes notes even when Write is disallowed.

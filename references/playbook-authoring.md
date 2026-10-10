@@ -10,14 +10,16 @@ never company facts. Build each one with a research agent (the brief below), the
   workflows.
 - **Procedures and named frameworks** a top practitioner uses in that job today, each adapted, not pasted.
 - **Checklists, output templates and a quality bar**, plus the common mistakes with a bad and a good example.
-- **Where facts live:** a map from each kind of fact to the doc and section heading, never the fact itself.
+- **Where facts live:** a map from each kind of fact to the doc and section heading, never the fact itself. The
+  strategy files go in the map as knowledge the role weighs, never as rules the playbook enforces.
 - **Sources** in `references/sources.md`: each with its date, licence and what was taken. Prefer recent material and
   current library state; say plainly when nothing recent exists instead of filling the gap with older sources.
 
 ## What never goes in
 
-Company facts (products, prices, customers, team, numbers), the owner's past decisions, market figures that change
-(valuations, prices, rankings: the playbook says how to find them on the day), and anything from an excluded folder.
+Company facts (products, prices, customers, team, numbers), the owner's plans and earlier answers, market figures
+that change (valuations, prices, rankings: the playbook says how to find them on the day), and anything from an
+excluded folder.
 
 ## On demand or preloaded
 
@@ -30,4 +32,5 @@ Give each agent: the company's `CLAUDE.md` and `docs-index.md` to read first; th
 the exact files to write (`SKILL.md` with the description "Playbook for <company>'s <role> role agent.", the
 `references/`); the evidence rule (recent sources, current library state, cited); and the limits (write only inside
 the playbook folder, no installs, no commits, no helper agents). Run at most five in parallel. Then review: no company
-facts (search for prices, names, numbers), every source cited, rules first, nothing from an excluded folder.
+facts or plans (search for prices, names, numbers), no plan turned into a rule, every source cited, rules first,
+nothing from an excluded folder.

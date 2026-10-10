@@ -1,6 +1,6 @@
 ---
 name: create-company
-description: Build an AI company in Claude Code. Interviews the owner about the company, its documents and the roles they want, then creates a company folder with shared rules, a docs index, one agent per role with an expert playbook, a hub where the owner mentions roles, sessions reachable from the phone, and evals. Run with /create-company, or /create-company add-role | playbook <role> | sessions | evals <role>.
+description: Build an AI company in Claude Code. Interviews the owner about the company, its documents and the roles they want, then creates a company folder with shared rules, a docs index, one agent per role with an expert playbook, a hub that routes the owner's messages to the right roles, sessions reachable from the phone, and evals. Run with /create-company, or /create-company add-role | playbook <role> | sessions | evals <role>.
 disable-model-invocation: true
 compatibility: Claude Code in a terminal on macOS, Linux or WSL, v2.1.224 or later; Remote Control needs a claude.ai subscription.
 ---
@@ -20,8 +20,8 @@ test a role's playbook.
 
 - Ask, never assume: the owner chooses the roles, the docs, the folder and every name. Use AskUserQuestion with the
   recommended default first; ask one question at a time when the answer needs thought, a short batch otherwise.
-- Write nothing about the owner's company into an agent file, a skill or a notebook: facts and decisions stay in the
-  owner's docs and records, referenced from `docs-index.md`.
+- Write nothing about the owner's company into an agent file, a skill or a notebook: facts and plans stay in the
+  owner's docs and strategy files, referenced from `docs-index.md`.
 - Preview before writing: show the plan, then the filled `CLAUDE.md` and one agent file, and get a yes. Never
   overwrite an existing folder.
 - Never start sessions, run evals or spawn research agents without the owner's yes: each costs usage on their plan.
@@ -41,7 +41,8 @@ Linux suggest `pandoc`; `pdftotext` or the Read tool for PDFs.
 2. **The folder:** where to create it (default `~/<company-slug>-company`); it becomes its own git repo.
 3. **The sources** (`templates/docs-index.md`):
    - Living docs: the files that hold company facts (at least one). Check each path exists and pick its read command.
-   - Decision records: files of decisions the owner approved, with dates (optional).
+   - The strategy files: plans, briefs and the owner's earlier answers, with dates (optional). The roles read them
+     as knowledge, not rules.
    - Evidence: research folders (optional).
    - Excluded: old copies or folders the roles must never read (optional).
 4. **The roles** (`references/role-design.md`): show the menu, recommend three to five to start, and let the owner
@@ -62,8 +63,9 @@ file. Wait for a yes.
 ### 4. Build
 
 1. Create the folder and `git init`.
-2. `CLAUDE.md` from `templates/company-CLAUDE.md`: fill every `{{...}}`; `{{EXCLUDED_SOURCES}}` names the excluded
-   folders ("Never use <folder>: it holds old versions."); `{{STYLE_RULES}}` adds the owner's style rules as rule 7.
+2. `CLAUDE.md` from `templates/company-CLAUDE.md`: fill every `{{...}}`; `{{ROLE_LIST}}` names each role with its
+   field in a few words (the hub routes by it); `{{EXCLUDED_SOURCES}}` names the excluded folders ("Never use
+   <folder>: it holds old versions."); `{{STYLE_RULES}}` adds the owner's style rules as rule 7.
 3. `docs-index.md` from `templates/docs-index.md`: one row per source with its exact read command. Run each command
    once to prove it reads.
 4. `.claude/settings.json` from `templates/settings.json`: the allow list holds each read command in the index (as
@@ -72,7 +74,7 @@ file. Wait for a yes.
 5. One `.claude/agents/<role>.md` per role (benched roles too) from `templates/role-agent.md`, filled from the
    interview. Keep `SendMessage` in `tools:`, never add `Agent`, and leave out "Your playbook" until it exists.
 6. `.claude/agent-memory/<role>/MEMORY.md` per role: a title, one line on what it holds (the role's own dated notes
-   from its conversations, never company facts or decisions), an empty "Notes" list.
+   from its conversations, never company facts or plans), an empty "Notes" list.
 7. The hub: `.claude/agents/hub.md` from `templates/hub-agent.md` (background sessions) or
    `templates/hub-subagents.md` (one session).
 8. `.claude/skills/ask/SKILL.md` from `templates/ask-skill.md`, and `usage-log.md` from `templates/usage-log.md`.
@@ -93,9 +95,9 @@ file. Wait for a yes.
    each session right away in `claude agents` (select it and press Control+T; it moves under "Pinned"), and to check
    the wiring by typing in the hub "@<one role> reply with the single word ok".
    One session: `cd <folder> && claude --agent hub -n hub` (add `--remote-control hub` for the phone).
-3. Explain in a few lines: `/ask <role> <question>`; the hub and its mentions, "discuss" and "summarize"; a standing
-   session per role; when the docs change, update the docs, never the roles; after editing a role, restart its
-   session; the two-week usage log.
+3. Explain in a few lines: `/ask <role> <question>`; the hub (mention roles, or none and it picks them), "discuss"
+   and "summarize"; a standing session per role; when the docs or the strategy files change, update them, never the
+   roles; after editing a role, restart its session; the two-week usage log.
 
 ## add-role
 

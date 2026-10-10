@@ -9,9 +9,13 @@ reach from your phone.
 - **The roles you pick.** Each one is an agent with a clear mandate, boundaries and answer format, plus an optional
   expert playbook (frameworks, checklists, templates) researched for its job.
 - **Your documents as the only source.** Roles never carry facts about your company; they read your docs and your
-  decision records when they answer, and cite them. When something changes, you update the doc, not the role.
-- **A hub.** Write `@cfo @cmo should we raise prices?` and each answers on its own; say "discuss" for a short round
-  where they react to each other, "summarize" for where they agree and differ.
+  strategy files (plans, briefs, your earlier answers) when they answer. The plans are knowledge, not rules: each
+  role is a professional in its field, leads with its own judgment and tells you where it differs from the plan.
+  When something changes, you update the doc, not the role.
+- **A hub, your chief of staff.** Write `@cfo @cmo should we raise prices?` and each answers on its own, or write
+  without a mention and the hub sends it to the one to three roles it is about and says who. Two or more answers
+  end with a short bottom line: where they agree, where they differ, what is left for you to choose. Say "discuss"
+  for a short round where they react to each other, "summarize" for a fuller summary.
 - **Memory.** Each role keeps its own notes from your conversations.
 - **Your phone.** Every role and the hub can run as a background session with Remote Control, so they appear in the
   Claude app. Prefer something simpler? Choose "one session" and the hub runs the roles inside a single window.

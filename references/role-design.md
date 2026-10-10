@@ -32,8 +32,9 @@ and crowd the context: skill descriptions past a small share of it are dropped. 
 
 ## Default answer formats
 
-- **Advisor** (strategy, CFO, CMO, product, legal): the position in one line; the reasons with sources; the biggest
-  risk; what would change its mind; the next step for the owner.
+- **Advisor** (strategy, CFO, CMO, product, legal): the position in one line; the reasons (its professional
+  reasoning; a source for a number, a quote or an outside claim); the biggest risk; what would change its mind; the
+  next step for the owner.
 - **Writer** (content): the draft ready to copy, in the reader's language; then at most three short notes on what it
   changed and why.
 - **Analyst** (data, research): the number or finding; the method and its sources; the assumptions; the confidence.
@@ -45,4 +46,5 @@ and crowd the context: skill descriptions past a small share of it are dropped. 
 - `tools:` includes `SendMessage` (without it a role cannot answer the hub or another role) and never `Agent`.
 - `memory: project` (the notebook). `model:` as the owner chose.
 - The description says the role is used only when the owner asks, through the hub, or when another role consults it.
-- No company facts and no decisions anywhere in the file: point to `docs-index.md`.
+- Nothing about the company anywhere in the file, no facts and no plans: point to `docs-index.md`, whose strategy
+  files the role weighs as knowledge, not rules.

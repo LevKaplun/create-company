@@ -13,9 +13,12 @@
 1. **`/ask <role> <question>`** in any session opened in the company folder: a fresh role answers one question.
 2. **A standing session per role:** `claude --agent cfo -n cfo` in the folder, or as a background session with Remote
    Control so it lives without a terminal and shows up in the Claude app on the phone.
-3. **The hub:** one session where the owner mentions roles (`@cfo @cmo ...`, groups such as `@all`) and the hub
-   relays each answer word for word. "discuss" starts a focused round where each role sees the others' answers;
-   "summarize" gives agreement and disagreement with nothing added.
+3. **The hub:** the owner's chief of staff, one session for the whole team. The owner mentions roles
+   (`@cfo @cmo ...`, groups such as `@all`), or mentions none and the hub picks the one to three roles the message is
+   about and says who. It relays each answer word for word and, after two or more, ends with a bottom line of at most
+   four lines: where they agree, where they differ, what is left to choose. "discuss" starts a focused round where
+   each role sees the others' answers; "summarize" gives a fuller summary of agreement and disagreement, nothing
+   added.
 
 ## Starting the background sessions
 
@@ -42,7 +45,7 @@ prints each Remote Control link. In the app the sessions keep their names.
 - `worktree.bgIsolation: "none"`: background sessions edit the folder in place. Without it they are pushed into a
   separate worktree, and notebook notes and the usage log never land in the folder.
 - `permissions.allow`: the read commands for the doc formats, `python3 -c` for math roles, web search and fetch.
-- `permissions.additionalDirectories`: the folders holding the docs, records and evidence.
+- `permissions.additionalDirectories`: the folders holding the docs, the strategy files and the evidence.
 - **Trust the folder once:** open `claude` in it interactively and accept the trust prompt. Until then the folder's
   own settings are ignored.
 
